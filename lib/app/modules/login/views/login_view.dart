@@ -19,6 +19,7 @@ class LoginView extends GetView<LoginController> {
             key: controller.formKey,
             child: Column(
               children: [
+                ///EMAIL
                 TextFormFieldWidget(
                     hintText: "email",
                     textEditingController: controller.emailEditingController,
@@ -46,6 +47,8 @@ class LoginView extends GetView<LoginController> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
+
+                ///PASSWORD
                 TextFormFieldWidget(
                     hintText: "password",
                     textEditingController: controller.passwordEditingController,
@@ -63,6 +66,8 @@ class LoginView extends GetView<LoginController> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
+
+                ///SUBMIT
                 ElevatedButton(
                     onPressed: () {
                       controller.handleSubmit();

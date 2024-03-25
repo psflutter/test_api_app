@@ -10,7 +10,8 @@ Future<void> main() async {
   await initServices();
   runApp(
     GetMaterialApp(
-      title: "Application",
+      debugShowCheckedModeBanner: false,
+      title: "Test Api App",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
@@ -18,6 +19,6 @@ Future<void> main() async {
 }
 
 Future<void> initServices() async {
-   await Get.putAsync(() => StorageService().init());
+  await Get.putAsync(() => StorageService().init());
   await Get.putAsync(() => ApiService().init());
 }

@@ -10,13 +10,28 @@ class ProductsRepository {
     List<Product> products = [];
 
     final data = await _apiService.get("${baseUrl}users?page=$pageKey");
+    var dataa = data["data"];
 
     // for (var element in data) {
     //   products.add(Product.fromJson(element));
     // }
 
-    data.map((element) => products.add(Product.fromJson(element))).toList();
+    dataa.map((element) => products.add(Product.fromJson(element))).toList();
 
     return products;
+  }
+
+  Future<List<Product>> getCategories(pageKey) async {
+    List<Product> categories = [];
+
+    final data = await _apiService.get("${baseUrl}users?page=$pageKey");
+
+    for (var element in data) {
+      categories.add(Product.fromJson(element));
+    }
+
+    // data.map((element) => categories.add(Category.fromJson(element))).toList();
+
+    return categories;
   }
 }

@@ -14,7 +14,6 @@ class LoginController extends GetxController {
   }
   @override
   void onInit() {
-    
     super.onInit();
   }
 
@@ -37,7 +36,6 @@ class LoginController extends GetxController {
         // "cityslicka"
       };
       var token = await _loginRepository.postApi(requestBody);
-
       if (token != null) {
         Get.offAllNamed(Routes.HOME);
       } else {
