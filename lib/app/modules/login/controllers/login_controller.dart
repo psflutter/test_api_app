@@ -22,11 +22,6 @@ class LoginController extends GetxController {
     super.onReady();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
   handleSubmit() async {
     if (formKey.currentState!.validate()) {
       Map<String, dynamic> requestBody = {

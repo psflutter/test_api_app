@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:test_api_app/app/modules/home/category_model.dart';
+import 'package:test_api_app/app/model/category_model.dart';
 import 'package:test_api_app/app/service/api_service.dart';
 
 class CategoryRepository {
@@ -10,16 +10,27 @@ class CategoryRepository {
     List<Categores> categories = [];
 
     final data = await _apiService.get("${baseUrl}entries");
-    var datac = data["entries"];
+    List datac = data["entries"];
     print("data ==> ${data["entries"]}");
 
-    // for (var element in data) {
-    //   categories.add(Product.fromJson(element));
+    for (int i = 0; i < datac.length; i++) {
+      if (i == 5) {
+        break;
+      }
+      categories.add(Categores.fromJson(datac[i]));
+    }
+
+    // for (var element in datac) {
+    //   categories.add(Categores.fromJson(element));
     // }
 
-    datac
-        .map((element) => categories.add(Categores.fromJson(element)))
-        .toList();
+    // datac.forEach((element) {
+    //   categories.add(Categores.fromJson(element));
+    // });
+
+    // datac
+    //     .map((element) => categories.add(Categores.fromJson(element)))
+    //     .toList();
 
     return categories;
   }

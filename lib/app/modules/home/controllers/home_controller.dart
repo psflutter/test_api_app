@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:test_api_app/app/modules/home/category_model.dart';
-import 'package:test_api_app/app/modules/home/product_model.dart';
+import 'package:test_api_app/app/model/category_model.dart';
+import 'package:test_api_app/app/model/product_model.dart';
 import 'package:test_api_app/app/repositories/category_repository.dart';
 import 'package:test_api_app/app/repositories/product_repository.dart';
 

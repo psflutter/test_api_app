@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_api_app/app/modules/home/controllers/home_controller.dart';
-import 'package:test_api_app/app/modules/home/product_model.dart';
+import 'package:test_api_app/app/model/product_model.dart';
 import 'package:test_api_app/app/routes/app_pages.dart';
 
 class ProductItemWidget extends GetWidget<HomeController> {
@@ -19,10 +19,13 @@ class ProductItemWidget extends GetWidget<HomeController> {
       child: ListTile(
         leading: ClipRRect(
             borderRadius: BorderRadius.circular(30),
-            child: Image.network(
-              "${productItem.avatar}",
-              height: 30,
-              width: 30,
+            child: Hero(
+              tag: "${productItem.id}",
+              child: Image.network(
+                "${productItem.avatar}",
+                height: 30,
+                width: 30,
+              ),
             )),
         title: Row(
           children: [

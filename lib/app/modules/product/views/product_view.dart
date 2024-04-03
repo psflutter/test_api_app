@@ -12,10 +12,13 @@ class ProductView extends GetView<ProductController> {
           centerTitle: true,
         ),
         body: Stack(children: [
-          Image.network(
-            "${controller.product.avatar}",
-            width: double.infinity,
-            fit: BoxFit.fill,
+          Hero(
+            tag: "${controller.product.id}",
+            child: Image.network(
+              "${controller.product.avatar}",
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
           ),
           Positioned(
               top: 20,

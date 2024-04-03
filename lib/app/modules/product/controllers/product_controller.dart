@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:test_api_app/app/modules/home/product_model.dart';
+import 'package:test_api_app/app/model/product_model.dart';
 
 class ProductController extends GetxController {
   Product product = Get.arguments["productItem"];
