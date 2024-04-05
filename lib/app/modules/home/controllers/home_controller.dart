@@ -17,7 +17,7 @@ class HomeController extends GetxController {
   ];
 
   RxBool isLoading = true.obs;
-  List categories = <Categores>[].obs;
+  List<Categores> categories = <Categores>[].obs;
   final PagingController<int, Product> _pagingController =
       PagingController(firstPageKey: 0);
   PagingController<int, Product> get pagingController => _pagingController;
